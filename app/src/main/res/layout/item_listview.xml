@@ -24,7 +24,7 @@
                 android:orientation="horizontal"
                 android:layout_marginBottom="5dp">
                 <TextView
-                    android:id="@+id/TextViewUser"
+                    android:id="@+id/TextViewUserName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Ricki"
@@ -41,7 +41,7 @@
                     android:layout_marginRight="5dp"/>
             </LinearLayout>
             <TextView
-                android:id="@+id/TextViewCaption"
+                android:id="@+id/TextViewDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="15dp"
@@ -62,7 +62,7 @@
                     android:layout_marginRight="5dp"
                     android:layout_marginBottom="5dp"/>
                 <TextView
-                    android:id="@+id/TextViewProject"
+                    android:id="@+id/TextViewProjectName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="PREWIT MOBILE"
@@ -85,7 +85,7 @@
                     android:layout_marginRight="5dp"
                     android:layout_marginBottom="5dp"/>
                 <TextView
-                    android:id="@+id/TextViewUserSendBy"
+                    android:id="@+id/TextViewAssignedBy"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Wisnu"

@@ -1,5 +1,6 @@
 package com.altrovis.prewit.Bussines.AddNewWorkItem;
 
+import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
@@ -19,6 +20,7 @@ public class AddNewWorkItemAsyncTask extends AsyncTask<Void, Void, JSONObject> {
 
     ProgressDialog progressDialog;
     ActivityHome context;
+    Dialog dialog;
 
     String url = GlobalVariable.UrlAddNewWorkItem;
     String param1 = "?description=";
@@ -35,14 +37,15 @@ public class AddNewWorkItemAsyncTask extends AsyncTask<Void, Void, JSONObject> {
 
     String completeUrl = "";
 
-    private AddNewWorkItemAsyncTask(ActivityHome context, String description, int projectID,
-                                    int assignedByID, int assignedToID){
+    public AddNewWorkItemAsyncTask(ActivityHome context, String description, int projectID,
+                                   int assignedByID, int assignedToID, Dialog dialog){
 
         this.context = context;
         this.description = description;
         this.projectID = projectID;
         this.assignedByID = assignedByID;
         this.assignedToID = assignedToID;
+        this.dialog = dialog;
 
         SharedPreferences login = context.getSharedPreferences("login", context.MODE_PRIVATE);
         createdBy = login.getString("username", "");
@@ -98,6 +101,7 @@ public class AddNewWorkItemAsyncTask extends AsyncTask<Void, Void, JSONObject> {
                 Toast.makeText(context, e.getMessage(), Toast.LENGTH_LONG);
             }
         }
+        dialog.dismiss();
 
     }
 }

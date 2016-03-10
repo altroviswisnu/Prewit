@@ -4,8 +4,10 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
+import android.widget.ArrayAdapter;
 
 import com.altrovis.prewit.Entities.GlobalVariable;
+import com.altrovis.prewit.Entities.Project;
 
 /**
  * Created by Wisnu on 10/03/2016.
@@ -14,14 +16,18 @@ public class GetAllProjectsAsyncTask extends AsyncTask<Void, Void, Void> {
 
     ProgressDialog progressDialog;
     Context context;
+    ArrayAdapter<Project> projectAdapter;
+
     String url = GlobalVariable.UrlGetAllProjects;
     String param1 = "?username=";
 
     String completeURL = "";
     String username = "";
 
-    private GetAllProjectsAsyncTask(Context context) {
+    public GetAllProjectsAsyncTask(Context context, ArrayAdapter<Project> projectAdapter) {
+
         this.context = context;
+        this.projectAdapter = projectAdapter;
 
         SharedPreferences login = context.getSharedPreferences("login", context.MODE_PRIVATE);
         username = login.getString("username", "");
@@ -56,6 +62,10 @@ public class GetAllProjectsAsyncTask extends AsyncTask<Void, Void, Void> {
         if (progressDialog.isShowing()) {
             progressDialog.dismiss();
         }
+
+        projectAdapter.clear();
+        projectAdapter.addAll(GlobalVariable.listOfProjects);
+        projectAdapter.notifyDataSetChanged();
 
     }
 }
