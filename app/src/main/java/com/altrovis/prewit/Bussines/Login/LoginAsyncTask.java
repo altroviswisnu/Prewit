@@ -32,7 +32,7 @@ public class LoginAsyncTask extends AsyncTask<Void, Void, JSONObject> {
 
     String completeUrl = "";
 
-    private LoginAsyncTask(ActivityLogin context, String username, String password){
+    public LoginAsyncTask(ActivityLogin context, String username, String password){
 
         this.context = context;
         this.username = username;

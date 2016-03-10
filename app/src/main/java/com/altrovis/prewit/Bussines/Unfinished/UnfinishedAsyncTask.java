@@ -29,7 +29,7 @@ public class UnfinishedAsyncTask extends AsyncTask<Void, Void, Void> {
     String username = "";
     String accessToken = "";
 
-    private UnfinishedAsyncTask(Context context, UnfinishedAdapter adapter){
+    public UnfinishedAsyncTask(Context context, UnfinishedAdapter adapter){
         this.context = context;
         this.adapter = adapter;
 

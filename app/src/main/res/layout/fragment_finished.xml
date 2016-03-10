@@ -7,6 +7,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:id="@+id/LinearLayoutAllFinished"
         android:orientation="vertical">
         <Spinner
             android:id="@+id/SpinnerFinished"
@@ -24,5 +25,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
     </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/LinearLayoutFragmentFinished"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"/>
+
 
 </FrameLayout>

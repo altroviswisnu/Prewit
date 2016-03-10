@@ -33,4 +33,12 @@ public class GlobalVariable {
     public static ArrayList<Project> listOfProjects;
     public static ArrayList<ProjectMember> listOfProjectMembers;
 
+    public static ArrayList<WorkItem> listOfFinished;
+    public static ArrayList<WorkItem> listOfFinishedByMe;
+    public static ArrayList<WorkItem> listOfFinishedToMe;
+
+    public static ArrayList<WorkItem> listOfUnfinished;
+    public static ArrayList<WorkItem> listOfUnfinishedByMe;
+    public static ArrayList<WorkItem> listOfUnfinishedToMe;
+
 }

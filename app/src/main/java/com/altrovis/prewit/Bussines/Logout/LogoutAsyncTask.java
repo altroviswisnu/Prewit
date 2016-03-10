@@ -30,7 +30,7 @@ public class LogoutAsyncTask extends AsyncTask<Void, Void, JSONObject> {
     String accessToken = "";
     String completeUrl = "";
 
-    private LogoutAsyncTask(ActivityHome context){
+    public LogoutAsyncTask(ActivityHome context){
 
         this.context = context;
 
