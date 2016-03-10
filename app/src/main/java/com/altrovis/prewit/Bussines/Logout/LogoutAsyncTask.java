@@ -1,7 +1,6 @@
-package com.altrovis.prewit.Bussines.Login;
+package com.altrovis.prewit.Bussines.Logout;
 
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
@@ -16,33 +15,34 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
- * Created by ricki on 3/8/2016.
+ * Created by Wisnu on 10/03/2016.
  */
-public class LoginAsyncTask extends AsyncTask<Void, Void, JSONObject> {
+public class LogoutAsyncTask extends AsyncTask<Void, Void, JSONObject> {
 
     ProgressDialog progressDialog;
-    ActivityLogin context;
+    ActivityHome context;
 
-    String url = GlobalVariable.UrlLogin;
+    String url = GlobalVariable.UrlLogout;
     String param1 = "?username=";
-    String param2 = "&password=";
+    String param2 = "&accessToken=";
 
     String username = "";
-    String password = "";
-
+    String accessToken = "";
     String completeUrl = "";
 
-    private LoginAsyncTask(ActivityLogin context, String username, String password){
+    private LogoutAsyncTask(ActivityHome context){
 
         this.context = context;
-        this.username = username;
-        this.password = password;
+
+        SharedPreferences login = context.getSharedPreferences("login", context.MODE_PRIVATE);
+        username = login.getString("username", "");
+        accessToken = login.getString("accessToken", "");
 
         progressDialog = new ProgressDialog(this.context);
         progressDialog.setMessage("Silahkan Tunggu");
         progressDialog.show();
 
-        completeUrl = url.concat(param1).concat(username).concat(param2).concat(password);
+        completeUrl = url.concat(param1).concat(username).concat(param2).concat(accessToken);
     }
 
     protected void onPreExecute() {
@@ -75,20 +75,16 @@ public class LoginAsyncTask extends AsyncTask<Void, Void, JSONObject> {
                 boolean isSuccessful = result.getBoolean("IsSuccessful");
                 if(isSuccessful){
 
-                    String accessToken = result.getString("AccessToken");
-                    SharedPreferences.Editor editor = context.getSharedPreferences(
-                            "login", Context.MODE_PRIVATE).edit();
-                    editor.putString("username", username);
-                    editor.putString("accesstoken", accessToken);
-                    editor.commit();
+                    SharedPreferences logoutClear = context.getSharedPreferences("login", context.MODE_PRIVATE);
+                    logoutClear.edit().remove("username").commit();
+                    logoutClear.edit().remove("accesstoken").commit();
 
-
-                    Intent intent = new Intent(context, ActivityHome.class);
+                    Intent intent = new Intent(context, ActivityLogin.class);
                     context.startActivity(intent);
                     context.finish();
                 } else {
                     String errorMessage = result.getString("ErrorMessage");
-                    Toast.makeText(context,errorMessage, Toast.LENGTH_LONG);
+                    Toast.makeText(context, errorMessage, Toast.LENGTH_LONG);
                 }
             } catch (JSONException e) {
                 Toast.makeText(context, e.getMessage(), Toast.LENGTH_LONG);
@@ -97,3 +93,4 @@ public class LoginAsyncTask extends AsyncTask<Void, Void, JSONObject> {
 
     }
 }
+

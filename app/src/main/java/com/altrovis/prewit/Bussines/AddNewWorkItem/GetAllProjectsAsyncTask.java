@@ -1,4 +1,4 @@
-package com.altrovis.prewit.Bussines.Finished;
+package com.altrovis.prewit.Bussines.AddNewWorkItem;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -6,39 +6,26 @@ import android.content.SharedPreferences;
 import android.os.AsyncTask;
 
 import com.altrovis.prewit.Entities.GlobalVariable;
-import com.altrovis.prewit.Entities.WorkItem;
-
-import java.util.ArrayList;
 
 /**
  * Created by Wisnu on 10/03/2016.
  */
-public class FinishedAsyncTask extends AsyncTask<Void, Void, Void> {
+public class GetAllProjectsAsyncTask extends AsyncTask<Void, Void, Void> {
 
     ProgressDialog progressDialog;
     Context context;
-    FinishedAdapter adapter;
-    ArrayList<WorkItem> listOfFinishedWorkItem;
-
-    String url = GlobalVariable.UrlGetAllFinishedWorkItems;
+    String url = GlobalVariable.UrlGetAllProjects;
     String param1 = "?username=";
-    String param2 = "&accessToken=";
-    String param3 = "&lastRetrievedID=";
 
     String completeURL = "";
     String username = "";
-    String accessToken = "";
 
-    private FinishedAsyncTask(Context context, FinishedAdapter adapter){
+    private GetAllProjectsAsyncTask(Context context) {
         this.context = context;
-        this.adapter = adapter;
 
         SharedPreferences login = context.getSharedPreferences("login", context.MODE_PRIVATE);
         username = login.getString("username", "");
-        accessToken = login.getString("accesstoken","");
-
-        completeURL = url.concat(param1).concat(username).concat(param2).concat(accessToken)
-                .concat(param3).concat(String.valueOf(GlobalVariable.LastID_Finished_All));
+        completeURL = url.concat(param1).concat(String.valueOf(username));
 
         progressDialog = new ProgressDialog(this.context);
         progressDialog.setMessage("Silahkan Tunggu");
@@ -48,7 +35,7 @@ public class FinishedAsyncTask extends AsyncTask<Void, Void, Void> {
     protected void onPreExecute() {
         super.onPreExecute();
 
-        if(!progressDialog.isShowing()){
+        if (!progressDialog.isShowing()) {
             progressDialog.show();
         }
     }
@@ -56,7 +43,7 @@ public class FinishedAsyncTask extends AsyncTask<Void, Void, Void> {
     @Override
     protected Void doInBackground(Void... params) {
         try {
-            listOfFinishedWorkItem = FinishedHelper.getListOfWorkItem(completeURL);
+            GlobalVariable.listOfProjects = NewWorkItemHelper.getListOfProject(completeURL);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -69,12 +56,6 @@ public class FinishedAsyncTask extends AsyncTask<Void, Void, Void> {
         if (progressDialog.isShowing()) {
             progressDialog.dismiss();
         }
-
-        adapter.addAll(listOfFinishedWorkItem);
-        adapter.notifyDataSetChanged();
-
-        int lastRetrivedID = listOfFinishedWorkItem.get(listOfFinishedWorkItem.size() - 1).getID();
-        GlobalVariable.LastID_Finished_All = lastRetrivedID;
 
     }
 }

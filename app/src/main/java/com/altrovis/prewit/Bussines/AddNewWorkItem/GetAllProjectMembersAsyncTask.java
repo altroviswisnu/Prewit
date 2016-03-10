@@ -1,4 +1,4 @@
-package com.altrovis.prewit.Bussines.Unfinished;
+package com.altrovis.prewit.Bussines.AddNewWorkItem;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -6,39 +6,34 @@ import android.content.SharedPreferences;
 import android.os.AsyncTask;
 
 import com.altrovis.prewit.Entities.GlobalVariable;
-import com.altrovis.prewit.Entities.WorkItem;
-
-import java.util.ArrayList;
 
 /**
  * Created by Wisnu on 10/03/2016.
  */
-public class UnfinishedToMeAsyncTask extends AsyncTask<Void, Void, Void> {
+public class GetAllProjectMembersAsyncTask extends AsyncTask<Void, Void, Void> {
 
     ProgressDialog progressDialog;
     Context context;
-    UnfinishedAdapter adapter;
-    ArrayList<WorkItem> listOfUnfinishedWorkItem;
 
-    String url = GlobalVariable.UrlGetAllUnFinishedWorkItemsToMe;
-    String param1 = "?username=";
-    String param2 = "&accessToken=";
-    String param3 = "&lastRetrievedID=";
+    String url = GlobalVariable.UrlGetAllProjectMembers;
+    String param1 = "?projectID=";
+    String param2 = "&username=";
+    String param3 = "&accessToken";
 
     String completeURL = "";
+    int projectID;
     String username = "";
     String accessToken = "";
 
-    private UnfinishedToMeAsyncTask(Context context, UnfinishedAdapter adapter){
+    private GetAllProjectMembersAsyncTask(Context context, int projectID) {
         this.context = context;
-        this.adapter = adapter;
+        this.projectID = projectID;
 
         SharedPreferences login = context.getSharedPreferences("login", context.MODE_PRIVATE);
         username = login.getString("username", "");
         accessToken = login.getString("accesstoken","");
 
-        completeURL = url.concat(param1).concat(username).concat(param2).concat(accessToken)
-                .concat(param3).concat(String.valueOf(GlobalVariable.LastID_UnFinished_ToMe));
+        completeURL = url.concat(param1).concat(String.valueOf(this.projectID));
 
         progressDialog = new ProgressDialog(this.context);
         progressDialog.setMessage("Silahkan Tunggu");
@@ -48,7 +43,7 @@ public class UnfinishedToMeAsyncTask extends AsyncTask<Void, Void, Void> {
     protected void onPreExecute() {
         super.onPreExecute();
 
-        if(!progressDialog.isShowing()){
+        if (!progressDialog.isShowing()) {
             progressDialog.show();
         }
     }
@@ -56,7 +51,7 @@ public class UnfinishedToMeAsyncTask extends AsyncTask<Void, Void, Void> {
     @Override
     protected Void doInBackground(Void... params) {
         try {
-            listOfUnfinishedWorkItem = UnfinishedHelper.getListOfWorkItem(completeURL);
+            GlobalVariable.listOfProjectMembers = NewWorkItemHelper.getListOfProjectMember(completeURL);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -70,12 +65,5 @@ public class UnfinishedToMeAsyncTask extends AsyncTask<Void, Void, Void> {
             progressDialog.dismiss();
         }
 
-        adapter.addAll(listOfUnfinishedWorkItem);
-        adapter.notifyDataSetChanged();
-
-        int lastRetrivedID = listOfUnfinishedWorkItem.get(listOfUnfinishedWorkItem.size() - 1).getID();
-        GlobalVariable.LastID_UnFinished_ToMe = lastRetrivedID;
-
     }
 }
-

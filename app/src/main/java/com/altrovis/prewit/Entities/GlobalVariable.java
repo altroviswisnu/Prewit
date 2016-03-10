@@ -1,5 +1,7 @@
 package com.altrovis.prewit.Entities;
 
+import java.util.ArrayList;
+
 /**
  * Created by Wisnu on 10/03/2016.
  */
@@ -27,5 +29,8 @@ public class GlobalVariable {
     public static int LastID_UnFinished_All = -1;
     public static int LastID_UnFinished_ByMe = -1;
     public static int LastID_UnFinished_ToMe = -1;
+
+    public static ArrayList<Project> listOfProjects;
+    public static ArrayList<ProjectMember> listOfProjectMembers;
 
 }
