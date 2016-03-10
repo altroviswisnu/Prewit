@@ -4,6 +4,7 @@ package com.altrovis.prewit.Entities;
  * Created by ricki on 3/8/2016.
  */
 public class User {
+
     private String Nickname;
     private String UrlProfilPicture;
 

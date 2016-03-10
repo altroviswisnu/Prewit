@@ -2,14 +2,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.altrovis.prewit.FragmentUnfinished">
+    tools:context="com.altrovis.prewit.FragmentFinishedToMe">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
         <Spinner
-            android:id="@+id/SpinnerUnFinished"
+            android:id="@+id/SpinnerFinishedToMe"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:background="@drawable/custom_spinner"
@@ -20,7 +20,7 @@
             android:entries="@array/list_update"/>
 
         <ListView
-            android:id="@+id/ListViewUnFinished"
+            android:id="@+id/ListViewFinishedToMe"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
     </LinearLayout>

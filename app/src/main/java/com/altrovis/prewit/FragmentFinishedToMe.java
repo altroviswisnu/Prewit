@@ -6,10 +6,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+public class FragmentFinishedToMe extends Fragment {
 
-public class FragmentUnfinished extends Fragment {
-
-    public FragmentUnfinished() {
+    public FragmentFinishedToMe() {
     }
 
     @Override
@@ -20,7 +19,8 @@ public class FragmentUnfinished extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_unfinished, container, false);
-        return view;
+       View view = inflater.inflate(R.layout.fragment_finished_to_me, container, false);
+       return view;
     }
+
 }

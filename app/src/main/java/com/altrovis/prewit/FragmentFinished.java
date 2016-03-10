@@ -13,11 +13,6 @@ public class FragmentFinished extends Fragment {
         // Required empty public constructor
     }
 
-    public static FragmentFinished newInstance(String param1, String param2) {
-        FragmentFinished fragment = new FragmentFinished();
-        return fragment;
-    }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,7 +21,7 @@ public class FragmentFinished extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_finished, container, false);
+        View view  = inflater.inflate(R.layout.fragment_finished, container, false);
+        return view;
     }
 }

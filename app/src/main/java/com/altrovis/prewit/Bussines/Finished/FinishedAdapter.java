@@ -1,4 +1,4 @@
-package com.altrovis.prewit.Bussines.Unfinished;
+package com.altrovis.prewit.Bussines.Finished;
 
 import android.app.Activity;
 import android.content.Context;
@@ -12,15 +12,15 @@ import com.altrovis.prewit.Entities.WorkItem;
 import java.util.ArrayList;
 
 /**
- * Created by ricki on 3/8/2016.
+ * Created by Wisnu on 10/03/2016.
  */
-public class UnfinishedAdapter extends ArrayAdapter<WorkItem> {
+public class FinishedAdapter extends ArrayAdapter<WorkItem> {
 
     Context context;
     int resource;
     ArrayList<WorkItem> listOfUnfinished;
 
-    public UnfinishedAdapter(Context context, int resource, ArrayList<WorkItem> listOfUnfinished) {
+    public FinishedAdapter(Context context, int resource, ArrayList<WorkItem> listOfUnfinished) {
         super(context, resource, listOfUnfinished);
 
         this.context = context;
