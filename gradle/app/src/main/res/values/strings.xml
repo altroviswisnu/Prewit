@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Prewit</string>
+    <string name="title_activity_activity_home"></string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="list_update">
+        <item>All Work Items</item>
+        <item>To Me</item>
+        <item>By Me</item>
+    </string-array>
+</resources>
