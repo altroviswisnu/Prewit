@@ -16,40 +16,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c8bb9ff-8566-4c61-b0c9-ae33afc1726e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/altrovis/prewit/Bussines/Finished/FinishedAdapter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/altrovis/prewit/Bussines/Finished/FinishedAsyncTask.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/altrovis/prewit/Bussines/Finished/FinishedByMeAsyncTask.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/altrovis/prewit/Bussines/Finished/FinishedHelper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/altrovis/prewit/Bussines/Finished/FinishedToMeAsyncTask.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/altrovis/prewit/FragmentFinishedByMe.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/altrovis/prewit/FragmentFinishedToMe.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/altrovis/prewit/FragmentUnfinishedByMe.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/altrovis/prewit/FragmentUnfinishedToMe.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/altrovis/prewit/Bussines/GlobalFunction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/altrovis/prewit/Entities/GlobalVariable.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/altrovis/prewit/Bussines/Unfinished/UnfinishedAsyncTask.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/altrovis/prewit/Bussines/Unfinished/UnfinishedByMeAsyncTask.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/altrovis/prewit/Bussines/Unfinished/UnfinishedHelper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/altrovis/prewit/Bussines/Unfinished/UnfinishedToMeAsyncTask.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/altrovis/prewit/Entities/WorkItem.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_finished_by_me.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_finished_to_me.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_unfinished_by_me.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_unfinished_to_me.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/altrovis/prewit/FragmentFinished.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/altrovis/prewit/FragmentFinished.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/altrovis/prewit/FragmentUnfinished.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/altrovis/prewit/FragmentUnfinished.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/altrovis/prewit/Bussines/Login/LoginAsyncTask.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/altrovis/prewit/Bussines/Login/LoginAsyncTask.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Prewit.iml" afterPath="$PROJECT_DIR$/Prewit.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/altrovis/prewit/Bussines/Unfinished/UnfinishedAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/altrovis/prewit/Bussines/Unfinished/UnfinishedAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/altrovis/prewit/Entities/User.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/altrovis/prewit/Entities/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_finished.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_finished.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_unfinished.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_unfinished.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Prewit/.idea/workspace.xml" afterPath="$PROJECT_DIR$/Prewit/.idea/workspace.xml" />
     </list>
     <ignored path="Prewit.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -2148,6 +2115,13 @@
       <option name="number" value="Default" />
       <updated>1457599738697</updated>
     </task>
+    <task id="LOCAL-00001" summary="pre-implementation web service">
+      <created>1457617019740</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1457617019740</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -2195,6 +2169,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="pre-implementation web service" />
+    <option name="LAST_COMMIT_MESSAGE" value="pre-implementation web service" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -2258,8 +2236,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="22" column="20" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
           <folding>
-            <element signature="e#357#358#0" expanded="true" />
-            <element signature="e#407#408#0" expanded="true" />
+            <element signature="e#357#358#0" expanded="false" />
+            <element signature="e#407#408#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2277,8 +2255,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
           <folding>
-            <element signature="e#357#358#0" expanded="true" />
-            <element signature="e#407#408#0" expanded="true" />
+            <element signature="e#357#358#0" expanded="false" />
+            <element signature="e#407#408#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2359,6 +2337,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2403,6 +2382,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2427,6 +2407,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.625">
           <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2501,8 +2482,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
           <folding>
-            <element signature="e#357#358#0" expanded="true" />
-            <element signature="e#407#408#0" expanded="true" />
+            <element signature="e#357#358#0" expanded="false" />
+            <element signature="e#407#408#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2531,8 +2512,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="22" column="20" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
           <folding>
-            <element signature="e#357#358#0" expanded="true" />
-            <element signature="e#407#408#0" expanded="true" />
+            <element signature="e#357#358#0" expanded="false" />
+            <element signature="e#407#408#0" expanded="false" />
           </folding>
         </state>
       </provider>
