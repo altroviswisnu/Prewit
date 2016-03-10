@@ -41,6 +41,7 @@ public class FragmentUnfinishedToMe extends Fragment {
         adapter = new UnfinishedAdapter(getActivity(), R.layout.item_listview,
                 GlobalVariable.listOfUnfinishedToMe);
         listViewUnfinishedToMe.setAdapter(adapter);
+        spinnerUnfinishedToMe.setSelection(2);
 
         spinnerUnfinishedToMe.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -48,22 +49,14 @@ public class FragmentUnfinishedToMe extends Fragment {
                 if (position == 0) {
 
                     LinearLayout mainContainer = (LinearLayout) getActivity()
-                            .findViewById(R.id.LinearLayoutUnfinishedToMe);
-                    mainContainer.setVisibility(LinearLayout.GONE);
+                            .findViewById(R.id.LinearLayoutAllUnFinished);
+                    mainContainer.setVisibility(LinearLayout.VISIBLE);
 
-                    FragmentUnfinished newFragment = new FragmentUnfinished();
                     FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                    fragmentTransaction.replace(R.id.LinearLayoutFragmentUnFinished, newFragment);
-                    fragmentTransaction.addToBackStack(null);
-                    fragmentTransaction.commit();
+                    fragmentManager.popBackStack();
 
                     spinnerUnfinishedToMe.setSelection(2);
                 } else if (position == 1) {
-
-                    LinearLayout mainContainer = (LinearLayout) getActivity()
-                            .findViewById(R.id.LinearLayoutUnfinishedToMe);
-                    mainContainer.setVisibility(LinearLayout.GONE);
 
                     FragmentUnfinishedByMe newFragment = new FragmentUnfinishedByMe();
                     FragmentManager fragmentManager = getActivity().getSupportFragmentManager();

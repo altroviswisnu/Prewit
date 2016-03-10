@@ -11,16 +11,18 @@ public class WorkItem {
     private String Description;
     private Date Created;
     private String AssignedBy;
+    private String AssingedTo;
     private String ProjectName;
 
     public WorkItem() {
     }
 
-    public WorkItem(int ID, String description, Date created, String assignedBy, String projectName) {
+    public WorkItem(int ID, String description, Date created, String assignedBy, String assingedTo, String projectName) {
         this.ID = ID;
         Description = description;
         Created = created;
         AssignedBy = assignedBy;
+        AssingedTo = assingedTo;
         ProjectName = projectName;
     }
 
@@ -54,6 +56,14 @@ public class WorkItem {
 
     public void setAssignedBy(String assignedBy) {
         AssignedBy = assignedBy;
+    }
+
+    public String getAssingedTo() {
+        return AssingedTo;
+    }
+
+    public void setAssingedTo(String assingedTo) {
+        AssingedTo = assingedTo;
     }
 
     public String getProjectName() {

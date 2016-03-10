@@ -40,6 +40,7 @@ public class FragmentFinishedByMe extends Fragment {
         adapter = new FinishedAdapter(getActivity(), R.layout.item_listview,
                 GlobalVariable.listOfFinishedByMe);
         listViewFinishedByMe.setAdapter(adapter);
+        spinnerFinishedByMe.setSelection(1);
 
         spinnerFinishedByMe.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -47,22 +48,14 @@ public class FragmentFinishedByMe extends Fragment {
                 if (position == 0) {
 
                     LinearLayout mainContainer = (LinearLayout) getActivity()
-                            .findViewById(R.id.LinearLayoutFinishedByMe);
-                    mainContainer.setVisibility(LinearLayout.GONE);
+                            .findViewById(R.id.LinearLayoutAllFinished);
+                    mainContainer.setVisibility(LinearLayout.VISIBLE);
 
-                    FragmentFinished newFragment = new FragmentFinished();
                     FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                    fragmentTransaction.replace(R.id.LinearLayoutFragmentFinished, newFragment);
-                    fragmentTransaction.addToBackStack(null);
-                    fragmentTransaction.commit();
+                    fragmentManager.popBackStack();
 
                     spinnerFinishedByMe.setSelection(1);
                 } else if (position == 2) {
-
-                    LinearLayout mainContainer = (LinearLayout) getActivity()
-                            .findViewById(R.id.LinearLayoutFinishedByMe);
-                    mainContainer.setVisibility(LinearLayout.GONE);
 
                     FragmentFinishedToMe newFragment = new FragmentFinishedToMe();
                     FragmentManager fragmentManager = getActivity().getSupportFragmentManager();

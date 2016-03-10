@@ -41,6 +41,7 @@ public class FragmentFinished extends Fragment {
         adapter = new FinishedAdapter(getActivity(), R.layout.item_listview,
                 GlobalVariable.listOfFinished);
         listViewFinished.setAdapter(adapter);
+        listViewFinished.setSelection(0);
 
         spinnerFinished.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -48,7 +49,7 @@ public class FragmentFinished extends Fragment {
                 if (position == 1) {
 
                     LinearLayout mainContainer = (LinearLayout) getActivity()
-                            .findViewById(R.id.LinearLayoutFragmentFinished);
+                            .findViewById(R.id.LinearLayoutAllFinished);
                     mainContainer.setVisibility(LinearLayout.GONE);
 
                     FragmentFinishedByMe newFragment = new FragmentFinishedByMe();
@@ -62,7 +63,7 @@ public class FragmentFinished extends Fragment {
                 } else if (position == 2) {
 
                     LinearLayout mainContainer = (LinearLayout) getActivity()
-                            .findViewById(R.id.LinearLayoutFragmentFinished);
+                            .findViewById(R.id.LinearLayoutAllFinished);
                     mainContainer.setVisibility(LinearLayout.GONE);
 
                     FragmentFinishedToMe newFragment = new FragmentFinishedToMe();

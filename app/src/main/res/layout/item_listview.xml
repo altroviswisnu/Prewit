@@ -24,7 +24,7 @@
                 android:orientation="horizontal"
                 android:layout_marginBottom="5dp">
                 <TextView
-                    android:id="@+id/TextViewUserName"
+                    android:id="@+id/TextViewAssignedTo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Ricki"

@@ -9,7 +9,7 @@
 
     <string-array name="list_update">
         <item>All Work Items</item>
-        <item>To Me</item>
         <item>By Me</item>
+        <item>To Me</item>
     </string-array>
 </resources>

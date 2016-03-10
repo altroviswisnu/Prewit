@@ -2,7 +2,6 @@ package com.altrovis.prewit.Bussines.Finished;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,16 +44,14 @@ public class FinishedAdapter extends ArrayAdapter<WorkItem> {
             view = inflater.inflate(resource, viewGroup, false);
         }
 
-        TextView textViewUsername = (TextView) view.findViewById(R.id.TextViewUserName);
+        TextView textViewAssignedTo = (TextView) view.findViewById(R.id.TextViewAssignedTo);
         TextView textViewCreated = (TextView) view.findViewById(R.id.TextViewCreated);
         TextView textViewDescription = (TextView) view.findViewById(R.id.TextViewDescription);
         TextView textViewProject = (TextView) view.findViewById(R.id.TextViewProjectName);
         TextView textViewAssignedBy = (TextView) view.findViewById(R.id.TextViewAssignedBy);
 
         WorkItem workItem = listOfFinished.get(position);
-
-        SharedPreferences login = context.getSharedPreferences("login", context.MODE_PRIVATE);
-        textViewUsername.setText(login.getString("username", ""));
+        textViewAssignedTo.setText(workItem.getAssingedTo());
         textViewCreated.setText(dateFormat.format(workItem.getCreated()));
 
         textViewDescription.setText(workItem.getDescription());

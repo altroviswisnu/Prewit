@@ -19,6 +19,7 @@ public class FinishedHelper {
     private static String TAG_DESCRIPTION = "Description";
     private static String TAG_CREATED = "Created";
     private static String TAG_ASSIGNED_BY = "AssignedBy";
+    private static String TAG_ASSIGNED_TO = "AssignedTo";
     private static String TAG_PROJECT_NAME = "ProjectName";
 
     public static ArrayList<WorkItem> getListOfWorkItem(String url) throws Exception {
@@ -37,6 +38,7 @@ public class FinishedHelper {
                     workItem.setID(detailWorkItem.getInt(TAG_ID));
                     workItem.setDescription(detailWorkItem.getString(TAG_DESCRIPTION));
                     workItem.setAssignedBy(detailWorkItem.getString(TAG_ASSIGNED_BY));
+                    workItem.setAssingedTo(detailWorkItem.getString(TAG_ASSIGNED_TO));
                     workItem.setProjectName(detailWorkItem.getString(TAG_PROJECT_NAME));
 
                     String dateString = detailWorkItem.getString(TAG_CREATED).replaceAll("\\D", "");
