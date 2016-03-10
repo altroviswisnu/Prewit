@@ -73,8 +73,10 @@ public class FinishedAsyncTask extends AsyncTask<Void, Void, Void> {
         adapter.addAll(listOfFinishedWorkItem);
         adapter.notifyDataSetChanged();
 
-        int lastRetrivedID = listOfFinishedWorkItem.get(listOfFinishedWorkItem.size() - 1).getID();
-        GlobalVariable.LastID_Finished_All = lastRetrivedID;
+        if(listOfFinishedWorkItem.size() > 0){
+            int lastRetrivedID = listOfFinishedWorkItem.get(listOfFinishedWorkItem.size() - 1).getID();
+            GlobalVariable.LastID_Finished_All = lastRetrivedID;
+        }
 
     }
 }

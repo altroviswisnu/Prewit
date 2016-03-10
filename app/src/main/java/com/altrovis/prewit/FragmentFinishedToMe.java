@@ -41,9 +41,9 @@ public class FragmentFinishedToMe extends Fragment {
                 GlobalVariable.listOfFinishedToMe);
         listViewFinishedToMe.setAdapter(adapter);
 
-        spinnerFinishedToMe.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        spinnerFinishedToMe.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 if (position == 0) {
 
                     LinearLayout mainContainer = (LinearLayout) getActivity()
@@ -74,7 +74,13 @@ public class FragmentFinishedToMe extends Fragment {
                     spinnerFinishedToMe.setSelection(2);
                 }
             }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
         });
+
 
         new FinishedToMeAsyncTask(getActivity(), adapter).execute();
 

@@ -73,9 +73,11 @@ public class UnfinishedAsyncTask extends AsyncTask<Void, Void, Void> {
         adapter.addAll(listOfUnfinishedWorkItem);
         adapter.notifyDataSetChanged();
 
-        int lastRetrivedID = listOfUnfinishedWorkItem.get(listOfUnfinishedWorkItem.size() - 1).getID();
-        GlobalVariable.LastID_UnFinished_All = lastRetrivedID;
-
+        if(listOfUnfinishedWorkItem.size() > 0){
+            int lastRetrivedID = listOfUnfinishedWorkItem.get(listOfUnfinishedWorkItem.size() - 1).getID();
+            GlobalVariable.LastID_UnFinished_All = lastRetrivedID;
+        }
+        
     }
 }
 

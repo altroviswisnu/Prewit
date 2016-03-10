@@ -41,9 +41,9 @@ public class FragmentUnfinishedByMe extends Fragment {
                 GlobalVariable.listOfUnfinishedByMe);
         listViewUnfinishedByMe.setAdapter(adapter);
 
-        spinnerUnfinishedByMe.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        spinnerUnfinishedByMe.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 if (position == 0) {
 
                     LinearLayout mainContainer = (LinearLayout) getActivity()
@@ -74,10 +74,14 @@ public class FragmentUnfinishedByMe extends Fragment {
                     spinnerUnfinishedByMe.setSelection(1);
                 }
             }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
         });
 
         new UnfinishedByMeAsyncTask(getActivity(), adapter).execute();
-
 
         return view;
     }

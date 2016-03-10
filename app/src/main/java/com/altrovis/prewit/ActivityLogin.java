@@ -1,5 +1,7 @@
 package com.altrovis.prewit;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -22,6 +24,10 @@ public class ActivityLogin extends AppCompatActivity {
     EditText editTextPassword;
     ActivityLogin login;
 
+    String username = "";
+    String password = "";
+    String accessToken = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,14 +38,14 @@ public class ActivityLogin extends AppCompatActivity {
             actionBar.hide();
         }
 
+        alreadyLogin();
         inisialisasiLayout();
         goToPageHome();
 
         setAnimation();
     }
 
-    public void inisialisasiLayout()
-    {
+    private void inisialisasiLayout() {
         buttonLogin = (Button)findViewById(R.id.ButtonLogin);
         imageViewLogo = (ImageView)findViewById(R.id.ImageViewLogo);
         relativeLayoutForm = (RelativeLayout)findViewById(R.id.RelativeLayoutForm);
@@ -48,8 +54,7 @@ public class ActivityLogin extends AppCompatActivity {
         login = this;
     }
 
-    public void setAnimation()
-    {
+    private void setAnimation() {
         Animation animation = AnimationUtils.loadAnimation(ActivityLogin.this, R.anim.fadein);
         imageViewLogo.startAnimation(animation);
 
@@ -57,15 +62,26 @@ public class ActivityLogin extends AppCompatActivity {
         relativeLayoutForm.startAnimation(animation2);
     }
 
-    public void goToPageHome()
-    {
+    private void goToPageHome() {
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String username = editTextUsername.getText().toString();
-                String password = editTextPassword.getText().toString();
+                username = editTextUsername.getText().toString();
+                password = editTextPassword.getText().toString();
                 new LoginAsyncTask(login, username, password).execute();
             }
         });
+    }
+
+    private void alreadyLogin(){
+        SharedPreferences login = getSharedPreferences("login", MODE_PRIVATE);
+        username = login.getString("username", "");
+        accessToken = login.getString("accesstoken","");
+
+        if(!username.equalsIgnoreCase("") && !accessToken.equalsIgnoreCase("")){
+            Intent intent = new Intent(ActivityLogin.this, ActivityHome.class);
+            startActivity(intent);
+            finish();
+        }
     }
 }
