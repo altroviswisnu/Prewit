@@ -30,7 +30,6 @@ public class UnfinishedEndlessScroll implements AbsListView.OnScrollListener {
                          int visibleItemCount, int totalItemCount) {
 
         if (totalItemCount - visibleItemCount <= firstVisibleItem + visibleThreshold) {
-
             if (asyncTask == null || asyncTask.getStatus() == AsyncTask.Status.FINISHED) {
                 asyncTask = new UnfinishedAsyncTask(context, adapter);
                 asyncTask.execute();

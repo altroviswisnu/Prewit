@@ -34,7 +34,6 @@ public class UnfinishedToMeEndlessScroll implements AbsListView.OnScrollListener
                          int visibleItemCount, int totalItemCount) {
 
         if (totalItemCount - visibleItemCount <= firstVisibleItem + visibleThreshold) {
-
             if (asyncTask == null || asyncTask.getStatus() == AsyncTask.Status.FINISHED) {
                 asyncTask = new UnfinishedToMeAsyncTask(context, adapter);
                 asyncTask.execute();

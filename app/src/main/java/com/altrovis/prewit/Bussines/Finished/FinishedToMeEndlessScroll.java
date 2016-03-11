@@ -29,9 +29,11 @@ public class FinishedToMeEndlessScroll implements AbsListView.OnScrollListener {
     public void onScroll(AbsListView view, int firstVisibleItem,
                          int visibleItemCount, int totalItemCount) {
 
-        if (asyncTask == null || asyncTask.getStatus() == AsyncTask.Status.FINISHED) {
-            asyncTask = new FinishedToMeAsyncTask(context, adapter);
-            asyncTask.execute();
+        if (totalItemCount - visibleItemCount <= firstVisibleItem + visibleThreshold){
+            if (asyncTask == null || asyncTask.getStatus() == AsyncTask.Status.FINISHED) {
+                asyncTask = new FinishedToMeAsyncTask(context, adapter);
+                asyncTask.execute();
+            }
         }
     }
 }
