@@ -14,6 +14,7 @@ import android.widget.Spinner;
 
 import com.altrovis.prewit.Bussines.Finished.FinishedAdapter;
 import com.altrovis.prewit.Bussines.Finished.FinishedByMeAsyncTask;
+import com.altrovis.prewit.Bussines.Finished.FinishedByMeEndlessScroll;
 import com.altrovis.prewit.Entities.GlobalVariable;
 
 public class FragmentFinishedByMe extends Fragment {
@@ -40,6 +41,8 @@ public class FragmentFinishedByMe extends Fragment {
         adapter = new FinishedAdapter(getActivity(), R.layout.item_listview,
                 GlobalVariable.listOfFinishedByMe);
         listViewFinishedByMe.setAdapter(adapter);
+        listViewFinishedByMe.setOnScrollListener(new FinishedByMeEndlessScroll((ActivityHome)
+                getActivity(), adapter));
         spinnerFinishedByMe.setSelection(1);
 
         spinnerFinishedByMe.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
