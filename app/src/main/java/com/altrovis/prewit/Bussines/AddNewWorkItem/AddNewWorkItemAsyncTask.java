@@ -13,6 +13,9 @@ import com.altrovis.prewit.Entities.GlobalVariable;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+
 /**
  * Created by Wisnu on 10/03/2016.
  */
@@ -27,7 +30,7 @@ public class AddNewWorkItemAsyncTask extends AsyncTask<Void, Void, JSONObject> {
     String param2 = "&projectID=";
     String param3 = "&assignedByProjectMemberID=";
     String param4 = "&assignedToProjectMemberID=";
-    String param5 = "&created=";
+    String param5 = "&createdBy=";
     String param6 = "&accessToken=";
 
     String description = "";
@@ -55,12 +58,16 @@ public class AddNewWorkItemAsyncTask extends AsyncTask<Void, Void, JSONObject> {
         progressDialog.setMessage("Silahkan Tunggu");
         progressDialog.show();
 
-        completeUrl = url.concat(param1).concat(description)
-                         .concat(param2).concat(String.valueOf(projectID))
-                         .concat(param3).concat(String.valueOf(assignedByID))
-                         .concat(param4).concat(String.valueOf(assignedToID))
-                         .concat(param5).concat(createdBy)
-                         .concat(param6).concat(accessToken);
+        try {
+            completeUrl = url.concat(param1).concat(URLEncoder.encode(description, "utf-8"))
+                             .concat(param2).concat(String.valueOf(projectID))
+                             .concat(param3).concat(String.valueOf(assignedByID))
+                             .concat(param4).concat(String.valueOf(assignedToID))
+                             .concat(param5).concat(createdBy)
+                             .concat(param6).concat(accessToken);
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
     }
 
     protected void onPreExecute() {
