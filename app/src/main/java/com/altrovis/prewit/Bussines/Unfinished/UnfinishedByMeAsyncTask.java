@@ -76,6 +76,8 @@ public class UnfinishedByMeAsyncTask extends AsyncTask<Void, Void, Void> {
         if(listOfUnfinishedWorkItem.size() > 0){
             int lastRetrivedID = listOfUnfinishedWorkItem.get(listOfUnfinishedWorkItem.size() - 1).getID();
             GlobalVariable.LastID_UnFinished_ByMe = lastRetrivedID;
+        } else {
+            GlobalVariable.All_UnFinishedByMe_Retrieved = true;
         }
 
 

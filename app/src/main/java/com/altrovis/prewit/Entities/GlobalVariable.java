@@ -41,4 +41,12 @@ public class GlobalVariable {
     public static ArrayList<WorkItem> listOfUnfinishedByMe = new ArrayList<WorkItem>();
     public static ArrayList<WorkItem> listOfUnfinishedToMe = new ArrayList<WorkItem>();
 
+    public static boolean All_UnFinished_Retrieved = false;
+    public static boolean All_UnFinishedByMe_Retrieved = false;
+    public static boolean All_UnFinishedToMe_Retrieved = false;
+
+    public static boolean All_Finished_Retrieved = false;
+    public static boolean All_FinishedByMe_Retrieved = false;
+    public static boolean All_FinishedToMe_Retrieved = false;
+
 }

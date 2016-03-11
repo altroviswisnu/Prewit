@@ -76,6 +76,8 @@ public class FinishedToMeAsyncTask extends AsyncTask<Void, Void, Void> {
         if(listOfFinishedWorkItem.size() > 0){
             int lastRetrivedID = listOfFinishedWorkItem.get(listOfFinishedWorkItem.size() - 1).getID();
             GlobalVariable.LastID_Finished_ToMe = lastRetrivedID;
+        } else {
+            GlobalVariable.All_FinishedToMe_Retrieved = true;
         }
 
     }

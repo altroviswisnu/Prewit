@@ -6,6 +6,7 @@ import android.widget.AbsListView;
 import android.widget.ListView;
 
 import com.altrovis.prewit.ActivityHome;
+import com.altrovis.prewit.Entities.GlobalVariable;
 
 /**
  * Created by Wisnu on 10/03/2016.
@@ -33,7 +34,8 @@ public class FinishedEndlessScroll implements AbsListView.OnScrollListener {
     public void onScroll(AbsListView view, int firstVisibleItem,
                          int visibleItemCount, int totalItemCount) {
 
-        if (totalItemCount - visibleItemCount <= firstVisibleItem + visibleThreshold){
+        if (!GlobalVariable.All_Finished_Retrieved &&
+                totalItemCount - visibleItemCount <= firstVisibleItem + visibleThreshold){
             if (asyncTask == null || asyncTask.getStatus() == AsyncTask.Status.FINISHED) {
                 asyncTask = new FinishedAsyncTask(context, adapter);
                 asyncTask.execute();
