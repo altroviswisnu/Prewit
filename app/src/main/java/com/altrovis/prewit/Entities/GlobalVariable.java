@@ -30,8 +30,8 @@ public class GlobalVariable {
     public static int LastID_UnFinished_ByMe = -1;
     public static int LastID_UnFinished_ToMe = -1;
 
-    public static ArrayList<Project> listOfProjects;
-    public static ArrayList<ProjectMember> listOfProjectMembers;
+    public static ArrayList<Project> listOfProjects = new ArrayList<Project>();
+    public static ArrayList<ProjectMember> listOfProjectMembers = new ArrayList<ProjectMember>();
 
     public static ArrayList<WorkItem> listOfFinished = new ArrayList<WorkItem>();
     public static ArrayList<WorkItem> listOfFinishedByMe = new ArrayList<WorkItem>();

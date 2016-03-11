@@ -17,7 +17,7 @@ import java.util.Date;
 public class NewWorkItemHelper {
 
     private static String TAG_ID = "ID";
-    private static String TAG_NAMA = "Nama";
+    private static String TAG_NAME = "Name";
     private static String TAG_CREATED = "Created";
     private static String TAG_PROJECT_ID = "ProjectID";
     private static String TAG_USERNAME = "Username";
@@ -60,7 +60,7 @@ public class NewWorkItemHelper {
 
                     Project project = new Project();
                     project.setID(detailProject.getInt(TAG_ID));
-                    project.setNama(detailProject.getString(TAG_NAMA));
+                    project.setNama(detailProject.getString(TAG_NAME));
 
                     String dateString = detailProject.getString(TAG_CREATED).replaceAll("\\D", "");
                     long dateTimeStamp = Long.parseLong(dateString);

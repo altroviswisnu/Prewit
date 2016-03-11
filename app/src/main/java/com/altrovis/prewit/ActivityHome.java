@@ -80,7 +80,8 @@ public class ActivityHome extends AppCompatActivity {
             dialog.setTitle("Tambah Work Item");
 
             LayoutInflater li = LayoutInflater.from(context);
-            View promptsView = li.inflate(R.layout.form_popup, null);
+            final View promptsView = li.inflate(R.layout.form_popup, null);
+            dialog.setContentView(promptsView);
 
             SharedPreferences login = context.getSharedPreferences("login", context.MODE_PRIVATE);
             username = login.getString("username", "");
@@ -96,7 +97,7 @@ public class ActivityHome extends AppCompatActivity {
             adapterProject.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             spinnerProject.setAdapter(adapterProject);
 
-            new GetAllProjectsAsyncTask(context, adapterProject).execute();
+            new GetAllProjectsAsyncTask(context, adapterProject, promptsView).execute();
 
             final ArrayAdapter<ProjectMember> adapterAssignTo = new ArrayAdapter<ProjectMember>(context,
                     android.R.layout.simple_spinner_item, new ArrayList<ProjectMember>());
@@ -107,7 +108,8 @@ public class ActivityHome extends AppCompatActivity {
                 @Override
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                     Project selectedProject = (Project) spinnerProject.getSelectedItem();
-                    new GetAllProjectMembersAsyncTask(context, selectedProject.getID(), adapterAssignTo).execute();
+                    new GetAllProjectMembersAsyncTask(context, selectedProject.getID(), adapterAssignTo,
+                            promptsView).execute();
                 }
 
                 @Override

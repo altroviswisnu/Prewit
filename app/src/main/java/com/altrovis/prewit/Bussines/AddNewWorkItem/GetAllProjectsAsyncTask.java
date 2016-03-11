@@ -1,13 +1,16 @@
 package com.altrovis.prewit.Bussines.AddNewWorkItem;
 
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
+import com.altrovis.prewit.ActivityHome;
 import com.altrovis.prewit.Entities.GlobalVariable;
 import com.altrovis.prewit.Entities.Project;
+import com.altrovis.prewit.R;
 
 /**
  * Created by Wisnu on 10/03/2016.
@@ -15,23 +18,30 @@ import com.altrovis.prewit.Entities.Project;
 public class GetAllProjectsAsyncTask extends AsyncTask<Void, Void, Void> {
 
     ProgressDialog progressDialog;
-    Context context;
+    ActivityHome context;
     ArrayAdapter<Project> projectAdapter;
+    View promptView;
 
     String url = GlobalVariable.UrlGetAllProjects;
     String param1 = "?username=";
+    String param2 = "&accessToken=";
 
     String completeURL = "";
     String username = "";
+    String accessToken = "";
 
-    public GetAllProjectsAsyncTask(Context context, ArrayAdapter<Project> projectAdapter) {
+    public GetAllProjectsAsyncTask(ActivityHome context, ArrayAdapter<Project> projectAdapter, View promptView) {
 
         this.context = context;
         this.projectAdapter = projectAdapter;
+        this.promptView = promptView;
 
         SharedPreferences login = context.getSharedPreferences("login", context.MODE_PRIVATE);
         username = login.getString("username", "");
-        completeURL = url.concat(param1).concat(String.valueOf(username));
+        accessToken = login.getString("accesstoken", "");
+
+        completeURL = url.concat(param1).concat(username)
+                        .concat(param2).concat(accessToken);
 
         progressDialog = new ProgressDialog(this.context);
         progressDialog.setMessage("Silahkan Tunggu");
@@ -66,6 +76,9 @@ public class GetAllProjectsAsyncTask extends AsyncTask<Void, Void, Void> {
         projectAdapter.clear();
         projectAdapter.addAll(GlobalVariable.listOfProjects);
         projectAdapter.notifyDataSetChanged();
+
+        Spinner spinnerProject = (Spinner) promptView.findViewById(R.id.SpinnerProject);
+        spinnerProject.setAdapter(projectAdapter);
 
     }
 }

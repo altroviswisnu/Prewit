@@ -56,11 +56,11 @@ public class AddNewWorkItemAsyncTask extends AsyncTask<Void, Void, JSONObject> {
         progressDialog.show();
 
         completeUrl = url.concat(param1).concat(description)
-                         .concat(param2).concat(String.valueOf(projectID)
-                         .concat(param3).concat(String.valueOf(assignedByID)
-                         .concat(param4).concat(String.valueOf(assignedToID)
+                         .concat(param2).concat(String.valueOf(projectID))
+                         .concat(param3).concat(String.valueOf(assignedByID))
+                         .concat(param4).concat(String.valueOf(assignedToID))
                          .concat(param5).concat(createdBy)
-                         .concat(param6).concat(accessToken))));
+                         .concat(param6).concat(accessToken);
     }
 
     protected void onPreExecute() {
