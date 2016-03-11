@@ -36,13 +36,14 @@ public class LogoutAsyncTask extends AsyncTask<Void, Void, JSONObject> {
 
         SharedPreferences login = context.getSharedPreferences("login", context.MODE_PRIVATE);
         username = login.getString("username", "");
-        accessToken = login.getString("accessToken", "");
+        accessToken = login.getString("accesstoken", "");
 
         progressDialog = new ProgressDialog(this.context);
         progressDialog.setMessage("Silahkan Tunggu");
         progressDialog.show();
 
-        completeUrl = url.concat(param1).concat(username).concat(param2).concat(accessToken);
+        completeUrl = url.concat(param1).concat(username)
+                    .concat(param2).concat(accessToken);
     }
 
     protected void onPreExecute() {
